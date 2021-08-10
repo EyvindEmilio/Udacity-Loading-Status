@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".MainActivity"
+        tools:showIn="@layout/activity_main">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDownload"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorPrimaryDark"
+            android:fitsSystemWindows="true"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_cloud_download_24" />
+
+        <RadioGroup
+            android:id="@+id/rgOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/btnLoading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivDownload">
+
+            <RadioButton
+                android:id="@+id/rbGlide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:text="@string/glide_option"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+
+            <RadioButton
+                android:id="@+id/rbLoadApp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:text="@string/loadapp_option"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+
+            <RadioButton
+                android:id="@+id/rbRetrofit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:text="@string/retrofit_option"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+        </RadioGroup>
+
+        <com.udacity.LoadingButton
+            android:id="@+id/btnLoading"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_margin="20dp"
+            android:background="@color/colorPrimary"
+            app:circularProgressColor="@color/circular_progress_color"
+            app:circularProgressSize="48dp"
+            app:horizontalProgressColor="@color/progress_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:progress="0"
+            app:text="@string/button_name"
+            app:textColor="@color/white"
+            app:textSize="@dimen/buttonTextSize" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
